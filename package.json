@@ -1,0 +1,44 @@
+{
+  "name": "things-web",
+  "version": "1.0.0",
+  "description": "Web UI for Things",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^2.11.0",
+    "chai": "^3.5.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-jslint": "^0.2.2",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-replace-task": "^0.11.0",
+    "gulp-sass": "^2.1.0",
+    "gulp-useref": "^3.0.5",
+    "karma": "^0.13.19",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.2.1",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "mocha": "^2.4.5",
+    "phantomjs-prebuilt": "^2.1.5",
+    "run-sequence": "^1.1.5"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rhoegg-things/things-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rhoegg-things/things-web/issues",
+    "email": "ryan.hoegg@gmail.com"
+  },
+  "author": "Ryan Hoegg <ryan.hoegg@gmail.com>",
+  "license": "Apache 2.0",
+  "private": true,
+  "dependencies": {
+    "bower": "^1.7.7"
+  }
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="automataApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life</title>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/olivia.css">
+    <link rel="stylesheet" href="bower_components/foundation-sites/dist/foundation.css">
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-title"><strong>Game of Life</strong></div>
+      <div id="responsive-menu">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li>
+              <a href="#">Patterns</a>
+              <ul class="menu vertical">
+                <li ng-repeat="pattern in patterns">
+                  <a href="#">{{pattern.name}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="expanded row" data-equalizer id="mainpanel" ng-controller="cellsController">
+      <div class="large-8 columns text-center">
+        <div id="gameboard" data-equalizer-watch>
+          <div class="world callout">
+            <div class="row" ng-repeat="row in world">
+              <div class="columns">
+                <div ng-class="['cell', cell.state ? 'on' : 'off']" 
+                    ng-repeat="cell in row track by $index" 
+                    ng-click="cell.toggle()" 
+                    ng-style="{width: cellSize, height: cellSize}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="large-4 columns">
+        <div id="controlpanel" data-equalizer-watch>
+          <form data-abide>
+            <div class="row">
+              <div class="switch columns">
+                <input class="switch-input" id="runSwitch" type="checkbox" name="runSwitch" ng-model="running" />
+                <label class="switch-paddle" for="runSwitch">
+                  <span class="show-for-sr">Run the animation</span>
+                  <span class="switch-active" aria-hidden="true">On</span>
+                  <span class="switch-inactive" aria-hidden="true">Off</span>
+                </label>
+              </div>
+              <div class="columns">
+                <button type="button" class="alert button" ng-click="clear()">Clear</button>
+              </div>
+            </div>
+            <div class="row">
+              <label>Speed
+                <input type="text" ng-model="gameSpeed" data-greater-than="0" data-less-than="51"/>
+                <span class="form-error">Must be between 1 and 50</span>
+              </label>
+              <label>Width
+                <input type="text" ng-model="cols" ng-blur="resizeWorld()" />
+              </label>
+              <label>Height
+                <input type="text" ng-model="rows" ng-blur="resizeWorld()" />
+              </label>
+              <label>Size
+                <input type="text" ng-model="cellSize" />
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/what-input/what-input.js"></script>
+    <script src="bower_components/foundation-sites/dist/foundation.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <!--build:js js/application.js -->
+    <script src="js/app.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>

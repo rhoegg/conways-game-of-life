@@ -1,0 +1,26 @@
+{
+  "name": "things-web",
+  "description": "Web UI for Things",
+  "main": "index.html",
+  "authors": [
+    "Ryan Hoegg <ryan.hoegg@gmail.com>"
+  ],
+  "license": "Apache 2.0",
+  "homepage": "https://github.com/rhoegg-things/things-web",
+  "dependencies": {
+    "foundation-sites": "~6.1.0",
+    "motion-ui": "~1.1.0",
+    "angular": "~1.4.9"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true,
+  "devDependencies": {
+    "angular-resource": "~1.4.9"
+  }
+}
